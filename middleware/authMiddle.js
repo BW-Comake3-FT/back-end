@@ -1,10 +1,6 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-<<<<<<< HEAD
-const db = require('../data/authModel');
-=======
 const Users = require("../users/users-model");
->>>>>>> master
 
 
 //Ensures proper format of data and creates user object.
@@ -32,19 +28,6 @@ exports.validateLogin = (req, res, next) => {
         req.body.password === undefined) {
             res.status(400).send({message: 'Invalid Form. Please refer to https://github.com/BW-Comake3-FT/back-end for api usage.'});
         } else {
-<<<<<<< HEAD
-            // db.getUser(req.body.email).then(user => {
-            //     if (user === null) {res.status(400).send({message: 'Invalid Username'}); return;}
-            //     if (bcrypt.compareSync(req.body.password, user.password)) {
-            //         req.user = user;
-            //         next();
-            //     } else {
-            //         res.status(401).send({message: 'Invalid Username or Password'});
-            //     }
-            // }).catch(err => {
-            //     res.status(500).send(err);
-            // });
-=======
             Users.find(req.body.email).then(user => {
                 if (bcrypt.compareSync(req.body.password, user.password)) {
                     req.user = user;
@@ -56,7 +39,6 @@ exports.validateLogin = (req, res, next) => {
                 res.status(500).send(err);
             });
 
->>>>>>> master
         }
 }
 
