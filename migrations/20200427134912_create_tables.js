@@ -17,7 +17,7 @@ exports.up = function(knex) {
         tbl.string('description', 140).notNullable();
         tbl.string('location', 140).notNullable();
         tbl.timestamp('timestamp').defaultTo(knex.fn.now());
-        tbl.integer("user_id").references("id").inTable("users").onUpdate("CASCADE").onDelete("CASCADE").notNullable();
+        // tbl.integer("user_id").references("id").inTable("users").onUpdate("CASCADE").onDelete("CASCADE").notNullable();
     })
 };
 

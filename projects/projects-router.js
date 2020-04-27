@@ -9,9 +9,10 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
+    console.log(req.body);
     Projects.add(req.body)
-    .then(newProject => res.status(201).json(newProject))
-    .catch(() => res.status(500).json({ message: "Error adding project"}))
+    .then(() => res.status(201).json({ message: "Successfully posted"}))
+    .catch(error => res.status(500).json({ message: error }))
 });
 
 router.delete("/:id", (req, res) => {

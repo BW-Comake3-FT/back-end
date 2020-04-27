@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 
 
 app.use('/api/auth', authRouter);
-app.use('/api/projects', authMiddle.validateToken, projectRouter);
+app.use('/api/projects', projectRouter);
 
 
 module.exports = app;
