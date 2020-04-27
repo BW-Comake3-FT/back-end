@@ -4,7 +4,7 @@ const path = require('path');
 const logger = require('morgan');
 const authMiddle = require('./middleware/authMiddle');
 const authRouter = require('./routes/authRouter');
-const projectRouter = require('./routes/projectRouter');
+const projectRouter = require("./projects/projects-router");
 require('dotenv').config();
 const app = express();
 
