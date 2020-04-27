@@ -4,9 +4,6 @@ const jwt = require('jsonwebtoken');
 
 //completes the registration process by saving the user to the db
 exports.register = (req, res) => {
-<<<<<<< HEAD
-    db.register(req.user).then(() => {
-=======
     Users.add(req.user).then(() => {
 >>>>>>> master
       res.status(201).send({message: 'Success!'});
