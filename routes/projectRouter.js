@@ -6,5 +6,4 @@ const authController = require('../controllers/projectController');
 
 
 
-
 module.exports = router;

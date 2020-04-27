@@ -5,7 +5,6 @@ const Users = require("../users/users-model");
 
 //Ensures proper format of data and creates user object.
 exports.validateRegistration = (req, res, next) => {
-    console.log(req.body);
     if (req.body.email === undefined ||
         req.body.name === undefined ||
         req.body.password === undefined ||
@@ -21,13 +20,14 @@ exports.validateRegistration = (req, res, next) => {
             next();
         }
 }
-
+ 
 //Ensures proper format of data and checks validity of the password to login.
 exports.validateLogin = (req, res, next) => {
     if (req.body.email === undefined ||
         req.body.password === undefined) {
             res.status(400).send({message: 'Invalid Form. Please refer to https://github.com/BW-Comake3-FT/back-end for api usage.'});
         } else {
+
             Users.find(req.body.email).then(user => {
                 if (bcrypt.compareSync(req.body.password, user.password)) {
                     req.user = user;
@@ -37,7 +37,7 @@ exports.validateLogin = (req, res, next) => {
                 }
             }).catch(err => {
                 res.status(500).send(err);
-            });
+            })
 
         }
 }
@@ -47,7 +47,7 @@ exports.validateToken = (req, res, next) => {
     if (req.headers.authenticate !== undefined) {
         jwt.verify(req.headers.authenticate, process.env.KEY, (err, decoded) => {
             if (err) {
-                resstatus(401).send(err);
+                res.status(401).send(err);
             } else {
                 req.user = decoded;
                 next();
@@ -56,4 +56,4 @@ exports.validateToken = (req, res, next) => {
     } else {
         res.status(400).send({message: 'No Token Found. Did you clear your browser storage? Please sign in again.'});
     }
-}
+} 
