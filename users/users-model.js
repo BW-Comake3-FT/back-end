@@ -7,12 +7,12 @@ module.exports = {
     findById,
   };
   
-  function find() {
-    return db("users").select("id", "username", "password");
+  function find(email) {
+    return db("users").where(email).first();
   }
   
   function findBy(filter) {
-    return db("users").where(filter);
+    return db("users").where("email", filter);
   }
   
   async function add(user) {

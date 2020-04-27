@@ -7,7 +7,7 @@ exports.up = function(knex) {
         tbl.string("name", 128).notNullable();
         tbl.string("email", 128).notNullable().unique();
         tbl.string("password", 128).notNullable();
-        tbl.integer("zip", 128).notNullable();
+        tbl.string("zipcode", 128).notNullable();
     })
 
     // Projects table
