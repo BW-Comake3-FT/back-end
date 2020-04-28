@@ -12,7 +12,7 @@ function find() {
 }
 
 function findById(id) { 
-    return db('projects').where({id}).first();
+    return db('projects').where("id", id).first();
 }
 
 function add(project) {

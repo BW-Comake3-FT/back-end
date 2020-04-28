@@ -3,8 +3,14 @@
  exports.getProjects = (req, res) => {
     Projects.find()
     .then(projects => res.status(200).json(projects))
-    .catch(() => res.status(500).json({ message: "Cannot retrieve messages"}));
+    .catch(() => res.status(500).json({ message: "Cannot retrieve projects"}));
  }
+
+ exports.getProjectById = (req, res) => {
+   Projects.findById(req.params.id)
+   .then(project => res.status(200).json(project))
+   .catch(() => res.status(500).json({ message: "Cannot retrieve project"}));
+}
 
  exports.addProject = (req, res) => {
     Projects.add(req.project)
