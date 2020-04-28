@@ -7,11 +7,13 @@ const authRouter = require('./routes/authRouter');
 const projectRouter = require("./routes/projectRouter");
 require('dotenv').config();
 const app = express();
+var cors = require("cors");
 
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+server.use(cors());
 
 app.use('/api/auth', authRouter);
 app.use('/api/projects', authMiddle.validateToken, projectRouter);
