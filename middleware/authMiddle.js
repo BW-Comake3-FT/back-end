@@ -36,7 +36,7 @@ exports.validateLogin = (req, res, next) => {
                     req.user = user;
                     next();
                 } else {
-                    res.status(401).send({message: 'Invalid Password'});
+                    res.status(401).send({message: 'Invalid Username or Password'});
                 }
             }).catch(err => {
                 res.status(500).send(err);
