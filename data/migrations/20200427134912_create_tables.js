@@ -16,7 +16,10 @@ exports.up = function(knex) {
         tbl.string('title', 255).notNullable();
         tbl.string('description', 140).notNullable();
         tbl.string('location', 140).notNullable();
+        tbl.string('category', 140).notNullable();
+        tbl.string('solution', 140).notNullable();
         tbl.timestamp('timestamp').defaultTo(knex.fn.now());
+        //i dont think we'll need this foreign key since the token will always contain the user id on each request
         // tbl.integer("user_id").references("id").inTable("users").onUpdate("CASCADE").onDelete("CASCADE").notNullable();
     })
 };

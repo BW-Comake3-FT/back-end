@@ -1,4 +1,4 @@
-const Users = require("../users/users-model");
+const Users = require("../data/authModel");
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
@@ -8,7 +8,11 @@ exports.register = (req, res) => {
       res.status(201).send({message: 'Success!'});
     })
     .catch(err => { 
-      res.status(500).send(err);
+      if (err.errno === 19) { //SQL CONSTRAINT - User already exists
+        res.status(400).send({message: 'This e-mail address is already in use.'});
+      } else {
+        res.status(500).send(err);
+      }
     });  
 }
 
