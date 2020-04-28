@@ -5,6 +5,8 @@ exports.seed = function(knex) {
       "title": "Gold project",
       "description": "This is a random description!",
       "location": "Chicago",
+      "category": "Test",
+      "solution": "Test",
       "timestamp": "2020-04-27 22:21:03"
     },
     {
@@ -12,6 +14,8 @@ exports.seed = function(knex) {
       "title": "Silver project",
       "description": "Awesome! It's working.",
       "location": "Atlanta",
+      "category": "Test",
+      "solution": "Test",
       "timestamp": "2020-04-27 22:23:09"
     },
     {
@@ -19,6 +23,8 @@ exports.seed = function(knex) {
       "title": "Titanium project",
       "description": "Hmm...",
       "location": "Omaha",
+      "category": "Test",
+      "solution": "Test",
       "timestamp": "2020-04-27 22:25:02"
     }
   ]);
