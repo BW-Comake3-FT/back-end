@@ -2,7 +2,6 @@ const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const logger = require('morgan');
-const cors = require("cors");
 const authMiddle = require('./middleware/authMiddle');
 const authRouter = require('./routes/authRouter');
 const projectRouter = require("./routes/projectRouter");
