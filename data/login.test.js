@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('./app');
+const app = require('../app');
 
 describe('Successful Login', () => {
     it('Should expect proper response for successfully logging in and receiving a JWT', async () => {

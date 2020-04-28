@@ -1,19 +1,20 @@
 const request = require('supertest');
-const app = require('./app');
+const app = require('../app');
 
-// describe('Test successfull registration', () => {
-//     it('Should expect to register an account successfully', async () => {
-//         const res = await request(app)
-//         .post('/api/auth/register')
-//         .send({	
-//         email: "test4@test.com", // Needs to be a unique email each time to pass
-//         name: "test",
-//         password: "test",
-//         zipcode: "33596"
-//     });
-//         expect(res.statusCode).toEqual(201); // Account created
-//     });
-// });
+describe('Test successfull registration', () => {
+    it('Should expect to register an account successfully', async () => {
+        let x = Math.floor(Math.random() * (1000 - 20)) + 20; // generate random number between 20 and 1000 to create unique email for registration
+        const res = await request(app)
+        .post('/api/auth/register')
+        .send({	
+            email: `test${x}@test.com`, // must be unique each time
+            name: "test",
+            password: "test",
+            zipcode: "33596"
+    });
+        expect(res.statusCode).toEqual(201); // Account created
+    });
+});
 
 describe('Test failed registration - Missing Data', () => {
     it('Should expect proper response for missing data during registration', async () => {
