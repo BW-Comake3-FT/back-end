@@ -18,6 +18,12 @@
     .catch(error => res.status(500).json({ message: error }))
  }
 
+ exports.updateProject = (req, res) => {
+    Projects.update(req.params.id, req.body)
+    .then(() => res.status(200).json( { message: "Successfully updated" }))
+    .catch(error => res.status(500).json({ message: error }))
+ }
+
  exports.deleteProject = (req, res) => {
     Projects.remove(req.params.id)
     .then(() => res.status(200).json({message: 'Successfully deleted'}))

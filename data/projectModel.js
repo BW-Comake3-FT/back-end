@@ -2,9 +2,10 @@ const db = require("./dbConfig");
 
 module.exports = {
     find,
+    findById,
     add,
-    remove,
-    findById
+    update,
+    remove
 }
 
 function find() {
@@ -19,6 +20,10 @@ function add(project) {
     return db("projects").insert(project).then(ids => {
         return findById(ids[0]);
     });
+}
+
+function update(id, changes) {
+    return db("projects").where("id", id).update(changes);
 }
 
 function remove(id) {
