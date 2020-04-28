@@ -3,6 +3,7 @@ const db = require("./dbConfig");
 module.exports = {
     find,
     findById,
+    findByLocation,
     add,
     update,
     remove
@@ -14,6 +15,10 @@ function find() {
 
 function findById(id) { 
     return db('projects').where("id", id).first();
+}
+
+function findByLocation(location) {
+    return db("projects").where("location", location);
 }
 
 function add(project) {

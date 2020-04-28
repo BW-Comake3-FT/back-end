@@ -1,6 +1,11 @@
  const Projects = require("../data/projectModel");
 
  exports.getProjects = (req, res) => {
+    const { location } = req.query;
+    location ? Projects.findByLocation(location)
+    .then(projects => res.status(200).json(projects))
+    .catch(error => res.status(500).json({ message: error }))
+    :
     Projects.find()
     .then(projects => res.status(200).json(projects))
     .catch(() => res.status(500).json({ message: "Cannot retrieve projects"}));
