@@ -3,9 +3,6 @@
 ## Authentication
 
 ### POST: `/api/auth/register`
-### POST: `/api/auth/login`
-
-#### User registration:
 
 ```
 {
@@ -16,7 +13,7 @@
 }
 ```
 
-#### User login:
+### POST: `/api/auth/login`
 
 ```
 {
@@ -32,8 +29,6 @@
 ### GET: `/api/projects/:id`
 ### PUT: `/api/projects/:id`
 ### DELETE: `/api/projects/:id`
-
-#### Project:
 
 ```
 {
