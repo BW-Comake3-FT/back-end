@@ -5,12 +5,14 @@
 
 #### User registration:
 
+```
 {
     "name": "Johnny",
     "email": "johnny@gmail.com",
     "password": "blah321",
     "zipcode": "10001"
 }
+```
 
 #### User login:
 
