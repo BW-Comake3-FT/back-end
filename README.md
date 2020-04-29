@@ -3,7 +3,7 @@
 ### POST: `/api/auth/register`
 ### POST: `/api/auth/login`
 
-User registration:
+#### User registration:
 
 {
     "name": "Johnny",
@@ -12,12 +12,14 @@ User registration:
     "zipcode": "10001"
 }
 
-User login:
+#### User login:
 
+```
 {
     "email": "johnny1@gmail.com",
     "password": "blah321"
 }
+```
 
 ## Projects (requires auth)
 
@@ -27,8 +29,9 @@ User login:
 ### PUT: `/api/projects/:id`
 ### DELETE: `/api/projects/:id`
 
-Project:
+#### Project:
 
+```
 {
     "title": "Improve public infrastructure",
     "description": "Raise funding.",
@@ -36,4 +39,5 @@ Project:
     "category": "Government",
     "solution": "ETC"
 }
+```
 
