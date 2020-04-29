@@ -1,4 +1,4 @@
-## Deployed: https://co-make-app.herokuapp.com/
+## [Deployed API](https://co-make-app.herokuapp.com/)
 
 ## Authentication
 
