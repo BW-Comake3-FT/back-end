@@ -34,7 +34,6 @@
 {
     "title": "Improve public infrastructure",
     "description": "Raise funding.",
-    "location": "Chicago",
     "category": "Government",
     "solution": "ETC"
 }
