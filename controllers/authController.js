@@ -18,7 +18,8 @@ exports.register = (req, res) => {
 
 //completes the login process by creating and returning authentication token to user
 exports.login = async (req, res) => {
-    token = jwt.sign(req.user, process.env.KEY, {expiresIn: '24h'});
+    tokenData = {id: req.user.id, name: req.user.name, email: req.user.email, zipcode: req.user.zipcode}
+    token = jwt.sign(tokenData, process.env.KEY, {expiresIn: '24h'});
     res.status(200).send({message: 'Welcome!', token: token});
 }
 
