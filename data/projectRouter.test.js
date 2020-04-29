@@ -1,6 +1,7 @@
 const request = require("supertest");
 const server = require("../app");
 
+// Tokens expire after 24 hr
 const token = process.env.TOKEN;
 
 const project = {
@@ -12,7 +13,7 @@ const project = {
 };
 
 describe("projectRouter test suite", () => {
-    // Tokens expire after 24 hr
+
     describe("Get all projects endpoint", () => {
         it("Should return 200 status with valid token", async () => {
             const res = await request(server).get("/api/projects")

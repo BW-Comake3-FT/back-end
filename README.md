@@ -17,7 +17,7 @@
 
 ```
 {
-    "email": "johnny1@gmail.com",
+    "email": "johnny@gmail.com",
     "password": "blah321"
 }
 ```
@@ -33,9 +33,9 @@
 ```
 {
     "title": "Improve public infrastructure",
-    "description": "Raise funding.",
+    "description": "Raise funding",
     "category": "Government",
-    "solution": "ETC"
+    "solution": "TBD"
 }
 ```
 

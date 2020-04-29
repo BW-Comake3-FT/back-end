@@ -9,7 +9,7 @@ describe('Successful Login', () => {
             email: "test4@test.com",
             password: "test"
         });
-        expect(typeof(res.body.token)).toBe(typeof('')); // Token is only generated on successfull validation of email and password combination
+        expect(typeof(res.body.token)).toBe(typeof('')); // Token is only generated on successful validation of email and password combination
     });
 });
 
