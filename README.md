@@ -1,3 +1,5 @@
+## Deployed: https://co-make-app.herokuapp.com/
+
 ## Authentication
 
 ### POST: `/api/auth/register`
