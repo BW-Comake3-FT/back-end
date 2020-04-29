@@ -2,7 +2,6 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const Users = require("../data/authModel");
 
-
 //Ensures proper format of data and creates user object.
 exports.validateRegistration = (req, res, next) => {
     if (req.body.email === undefined ||
@@ -20,7 +19,7 @@ exports.validateRegistration = (req, res, next) => {
             next();
         }
 }
- 
+
 //Ensures proper format of data and checks validity of the password to login.
 exports.validateLogin = (req, res, next) => {
     if (req.body.email === undefined ||
