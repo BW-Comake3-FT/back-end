@@ -22,6 +22,7 @@ const axios = require('axios');
                     location: cityState,
                     category: req.body.category,
                     solution: req.body.solution,
+                    userid: req.user.id
                 }
                 next();
             }).catch(err => res.status(500).send({message: err}));
