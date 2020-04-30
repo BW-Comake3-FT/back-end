@@ -18,6 +18,7 @@ exports.up = function(knex) {
         tbl.string('location', 140).notNullable();
         tbl.string('category', 140).notNullable();
         tbl.string('solution', 140).notNullable();
+        tbl.integer('userid').notNullable();
         tbl.timestamp('timestamp').defaultTo(knex.fn.now());
     })
 };
