@@ -1,10 +1,11 @@
 const request = require("supertest");
 const server = require("../app");
 
+// Tokens expire after 24 hr
 const token = process.env.TOKEN;
 
 const project = {
-    "title": "Improve infrastructure",
+    "title": "Improve infrastructure 2",
     "description": "We'll need to raise funding.",
     "location": "Chicago",
     "category": "Government",
@@ -12,7 +13,7 @@ const project = {
 };
 
 describe("projectRouter test suite", () => {
-    // Tokens expire after 24 hr
+
     describe("Get all projects endpoint", () => {
         it("Should return 200 status with valid token", async () => {
             const res = await request(server).get("/api/projects")
@@ -36,11 +37,27 @@ describe("projectRouter test suite", () => {
         })
     })
 
+    describe("Update project by ID", () => {
+        it("Should return 200 status", async () => {
+            const res = await request(server).put("/api/projects/1").send(project)
+            .set("Authenticate", token);
+            expect(res.statusCode).toBe(200);
+        })
+    })
+
     describe("Add new project", () => {
-        it("Should return 500 status", async () => {
+        it("Error handling: should return 500 status", async () => {
             const res = await request(server).post("/api/projects").send(project)
             .set("Authenticate", token);
             expect(res.statusCode).toBe(500);
+        })
+    })
+
+    describe("Delete project", () => {
+        it("Error handling: should return 404", async () => {
+            const res = await request(server).delete("/api/projects/2").send(project)
+            .set("Authenticate", token);
+            expect(res.statusCode).toBe(404);
         })
     })
 })

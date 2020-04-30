@@ -1,23 +1,26 @@
+## [Deployed API](https://co-make-app.herokuapp.com/)
+
 ## Authentication
 
 ### POST: `/api/auth/register`
-### POST: `/api/auth/login`
 
-User registration:
-
+```
 {
     "name": "Johnny",
     "email": "johnny@gmail.com",
     "password": "blah321",
     "zipcode": "10001"
 }
+```
 
-User login:
+### POST: `/api/auth/login`
 
+```
 {
-    "email": "johnny1@gmail.com",
+    "email": "johnny@gmail.com",
     "password": "blah321"
 }
+```
 
 ## Projects (requires auth)
 
@@ -27,13 +30,12 @@ User login:
 ### PUT: `/api/projects/:id`
 ### DELETE: `/api/projects/:id`
 
-Project:
-
+```
 {
     "title": "Improve public infrastructure",
-    "description": "Raise funding.",
-    "location": "Chicago",
+    "description": "Raise funding",
     "category": "Government",
-    "solution": "ETC"
+    "solution": "TBD"
 }
+```
 
