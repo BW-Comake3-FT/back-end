@@ -15,6 +15,11 @@ var server = http.createServer(app);
 //Listen on provided port, on all network interfaces
 server.listen(port);
 
+// Respond with server status instead of 'Cannot GET /'
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "Server is up"})
+})
+
 //Normalize a port into a number, string, or false
 function normalizePort(val) {
   var port = parseInt(val, 10);
