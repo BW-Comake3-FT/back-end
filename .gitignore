@@ -113,4 +113,8 @@ dist
 .yarn/cache
 .yarn/unplugged
 .yarn/build-state.yml
+<<<<<<< HEAD
 .pnp.*
+=======
+.pnp.*
+>>>>>>> 5519f2b54cf79149f340190df69a408459ed0c7e
