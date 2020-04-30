@@ -19,6 +19,8 @@ exports.up = function(knex) {
         tbl.string('category', 140).notNullable();
         tbl.string('solution', 140).notNullable();
         tbl.integer('userid').notNullable();
+        tbl.integer('upvote').defaultTo(0);
+        tbl.integer('downvote').defaultTo(0);
         tbl.timestamp('timestamp').defaultTo(knex.fn.now());
     })
 };
