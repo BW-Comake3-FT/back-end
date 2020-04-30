@@ -6,7 +6,7 @@ describe('Successful Login', () => {
         const res = await request(app)
         .post('/api/auth/login')
         .send({
-            email: "test4@test.com",
+            email: "test@test.com",
             password: "test"
         });
         expect(typeof(res.body.token)).toBe(typeof('')); // Token is only generated on successful validation of email and password combination
@@ -18,7 +18,7 @@ describe('Failed Login - invalid password', () => {
         const res = await request(app)
         .post('/api/auth/login')
         .send({
-            email: "test4@test.com",
+            email: "test@test.com",
             password: "ABC" // Intentionally wrong password
         });
         expect(res.body.message).toBe('Invalid Password');
